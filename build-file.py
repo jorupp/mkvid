@@ -11,7 +11,11 @@ if __name__ == "__main__":
     outFile = open(outFileName, 'w')
     directory = "output"
     frame = 0
-    for filename in os.listdir(directory):
+    
+    list_of_files = os.listdir(directory)
+    list_of_files.sort()
+
+    for filename in sorted(list_of_files):
         if filename.endswith(".png"): 
             path = os.path.join(directory, filename)
             img = Image.open(path)
